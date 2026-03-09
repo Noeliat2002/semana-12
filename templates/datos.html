@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block title %}Datos{% endblock %}
+
+{% block content %}
+<h2>Datos Almacenados</h2>
+
+<h3>Datos TXT</h3>
+<pre>{{ datos_txt }}</pre>
+
+<h3>Datos JSON</h3>
+<pre>{{ datos_json }}</pre>
+
+<h3>Datos CSV</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in datos_csv %}
+        <tr>
+            <td>{{ row.id }}</td>
+            <td>{{ row.nombre }}</td>
+            <td>{{ row.precio }}</td>
+            <td>{{ row.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Datos SQLite</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Precio</th>
+            <th>Cantidad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for producto in productos_db %}
+        <tr>
+            <td>{{ producto.id }}</td>
+            <td>{{ producto.nombre }}</td>
+            <td>{{ producto.precio }}</td>
+            <td>{{ producto.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
