@@ -1,1 +1,8 @@
-[]
+[
+    {
+        "id": 1,
+        "nombre": "baby sec ",
+        "precio": 15.0,
+        "cantidad": 5
+    }
+]

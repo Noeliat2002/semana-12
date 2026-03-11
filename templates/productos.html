@@ -4,7 +4,7 @@
 
 {% block content %}
 <h2>Lista de Productos</h2>
-<a href="{{ url_for('producto_form') }}">Agregar Producto</a>
+<a href="{{ url_for('producto_form') }}" class="add-link">Agregar Producto</a>
 <table>
     <thead>
         <tr>
@@ -12,6 +12,7 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Cantidad</th>
+            <th>Acciones</th>
         </tr>
     </thead>
     <tbody>
@@ -21,6 +22,7 @@
             <td>{{ producto.nombre }}</td>
             <td>{{ producto.precio }}</td>
             <td>{{ producto.cantidad }}</td>
+            <td><a href="{{ url_for('delete_producto', id=producto.id) }}" class="btn">Eliminar</a></td>
         </tr>
         {% endfor %}
     </tbody>

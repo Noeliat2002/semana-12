@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+
+{% block title %}Agregar Usuario{% endblock %}
+
+{% block content %}
+<h2>Agregar Usuario</h2>
+<form method="POST">
+    {{ form.hidden_tag() }}
+    <div>
+        {{ form.nombre.label }}<br>
+        {{ form.nombre() }}
+    </div>
+    <div>
+        {{ form.mail.label }}<br>
+        {{ form.mail() }}
+    </div>
+    <div>
+        {{ form.password.label }}<br>
+        {{ form.password() }}
+    </div>
+    <div>
+        {{ form.submit() }}
+    </div>
+</form>
+{% endblock %}

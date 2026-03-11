@@ -33,7 +33,7 @@
     </tbody>
 </table>
 
-<h3>Datos SQLite</h3>
+<h3>Datos MySQL - Productos</h3>
 <table>
     <thead>
         <tr>
@@ -50,6 +50,26 @@
             <td>{{ producto.nombre }}</td>
             <td>{{ producto.precio }}</td>
             <td>{{ producto.cantidad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+<h3>Datos MySQL - Usuarios</h3>
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Nombre</th>
+            <th>Email</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for usuario in usuarios_db %}
+        <tr>
+            <td>{{ usuario.id_usuario }}</td>
+            <td>{{ usuario.nombre }}</td>
+            <td>{{ usuario.mail }}</td>
         </tr>
         {% endfor %}
     </tbody>
