@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Producto{% endblock %}
+
+{% block content %}
+<h2>{% if producto %}Editar{% else %}Agregar{% endif %} Producto</h2>
+<form method="POST" class="w-50">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.nombre.label(class="form-label") }}
+        {{ form.nombre(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.precio.label(class="form-label") }}
+        {{ form.precio(class="form-control") }}
+    </div>
+    <div class="mb-3">
+        {{ form.cantidad.label(class="form-label") }}
+        {{ form.cantidad(class="form-control") }}
+    </div>
+    <button type="submit" class="btn btn-success">Guardar</button>
+</form>
+{% endblock %}

@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Factura{% endblock %}
+
+{% block content %}
+<h2>Crear Factura</h2>
+<form method="POST" class="w-50">
+    {{ form.hidden_tag() }}
+    <div class="mb-3">
+        {{ form.id_usuario.label(class="form-label") }}
+        {{ form.id_usuario(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.id_producto.label(class="form-label") }}
+        {{ form.id_producto(class="form-select") }}
+    </div>
+    <div class="mb-3">
+        {{ form.cantidad.label(class="form-label") }}
+        {{ form.cantidad(class="form-control") }}
+    </div>
+    {{ form.submit(class="btn btn-success") }}
+</form>
+{% endblock %}
